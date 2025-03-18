@@ -1,0 +1,99 @@
+/* General styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f6f9;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.regBox {
+  background: linear-gradient(to right, #06327d 40%, #209d5c);
+  width: 100vw; 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.register {
+  width: 320px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Headings */
+.register h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #012461
+}
+
+.register p {
+  font-size: 14px;
+  color: #012461;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.register input[type="text"],
+.register input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect */
+.register input[type="text"]:focus,
+.register input[type="password"]:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 5px rgba(30, 58, 138, 0.2);
+}
+
+/* Register button */
+.register input[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #1e3a8a;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.register input[type="submit"]:hover {
+  background: #143c72;
+}
+
+/* Login link */
+.register .links {
+  margin-top: 30px;
+}
+
+.register .links a {
+  color: #1e3a8a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.register .links a:hover {
+  text-decoration: underline;
+  color: #143c72;
+}
