@@ -1,7 +1,7 @@
 import React from 'react';
 import './secondNav.css';
 
-const SecondNav = ({ type }) => {
+const SecondNav = ({ type, isVisible }) => {
   let menuItems = [];
 
   if (type === "dashboard") {
@@ -13,7 +13,7 @@ const SecondNav = ({ type }) => {
   }
 
   return (
-    <nav className="second-navbar">
+    <nav className={`second-navbar ${isVisible ? 'show' : ''}`}>
       <ul className="sub-nav-list">
         {menuItems.map((item, index) => (
           <li key={index}><a href="#">{item}</a></li>
@@ -21,6 +21,6 @@ const SecondNav = ({ type }) => {
       </ul>
     </nav>
   );
-}
+};
 
 export default SecondNav;
