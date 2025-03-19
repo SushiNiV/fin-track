@@ -17,15 +17,21 @@
   display: flex;
   align-items: center;
   margin-left: 40px;
+  transition: transform 0.3s ease; 
+}
+
+.logo-container:hover {
+  transform: scale(1.1);
 }
 
 .logo {
   height: 55px;
-  transition: transform 0.3s ease; 
 }
 
-.logo:hover {
-  transform: scale(1.1);
+.wm {
+  height: 55px;
+  position: relative;
+  left: -20px;
 }
 
 .title {

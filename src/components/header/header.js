@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./header.css";
 import SecondNav from "../header/secondNav/secondNav";
 import logo from "../../assets/BLOGO.png";
-import wm from "../../assets/WMLOGO.png";
+import wm from "../../assets/WMlogo.png";
 
 const NavBar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
