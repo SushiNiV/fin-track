@@ -27,7 +27,7 @@ let db;
   }
 })();
 
-//s User Registration Route
+//Registration
 app.post("/register", async (req, res) => {
   try {
     const { Username, Password } = req.body;
@@ -36,16 +36,13 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ error: "Username and Password are required" });
     }
 
-    // Check if user already exists
     const [existingUsers] = await db.execute("SELECT * FROM Users WHERE Username = ?", [Username]);
     if (existingUsers.length > 0) {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(Password, 10);
 
-    // Insert new user
     await db.execute("INSERT INTO Users (Username, Password) VALUES (?, ?)", [Username, hashedPassword]);
 
     res.status(201).json({ message: "User registered successfully" });
