@@ -1,23 +1,28 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
 import './login.css';
 
 export default function Login() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const loginHandler = (e) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
-    
-    const registeredUsername = localStorage.getItem("username");
-    const registeredPassword = localStorage.getItem("password");
-    
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    
-    if (username === registeredUsername && password === registeredPassword) {
+
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        Username: username,
+        Password: password
+      });
+
+      alert(response.data.message);
       localStorage.setItem("isLoggedIn", "true");
       navigate("/");
-    } else {
-      alert('Incorrect username or password');
+    } catch (error) {
+      setError(error.response?.data?.message || "Login failed.");
     }
   };
 
@@ -26,13 +31,26 @@ export default function Login() {
         <form className="login" onSubmit={loginHandler}>
           <h2>Log In</h2>
           <p>Access your account</p>
-          <input id="username" type="text" placeholder="Username" required />
-          <input id="password" type="password" placeholder="Password" required />
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <input type="submit" value="Log In" />
-      <div className="links">
-          <a onClick={() => navigate("/register")}>Create an account</a>
-      </div>
-    </form>
+          <div className="links">
+              <a onClick={() => navigate("/register")}>Create an account</a>
+          </div>
+        </form>
     </section>
   );
 }

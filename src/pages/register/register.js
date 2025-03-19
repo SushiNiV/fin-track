@@ -1,33 +1,56 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
 import './register.css';
 
 export default function Register() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const registerHandler = (e) => {
+  const registerHandler = async (e) => {
     e.preventDefault();
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
 
-    if (username && password) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-      alert('Registration Successful!');
+    if (!username || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/register", {
+        Username: username,
+        Password: password
+      });
+
+      alert("Registration Successful!");
       navigate("/login");
-    } else {
-      alert('Please fill in all fields.');
+    } catch (error) {
+      alert(error.response?.data?.message || "Registration failed.");
+      console.error("Error:", error);
     }
   };
 
   return (
     <section className='regBox'>
-        <section className="register">
+      <section className="register">
         <div className="register-container">
           <h2>Create an Account</h2>
           <p>Sign up to start managing your finances.</p>
           <form onSubmit={registerHandler}>
-            <input id="username" type="text" placeholder="Username" required />
-            <input id="password" type="password" placeholder="Password" required />
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <input type="submit" value="Register" />
           </form>
           <div className="links">
