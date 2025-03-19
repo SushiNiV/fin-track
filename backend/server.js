@@ -18,17 +18,16 @@ const dbConfig = {
 
 let db;
 
-// Connect to database
 (async () => {
   try {
     db = await mysql.createConnection(dbConfig);
-    console.log("✅ Connected to MySQL");
+    console.log("Connected to MySQL");
   } catch (err) {
-    console.error("❌ Database connection failed:", err);
+    console.error("Database connection failed:", err);
   }
 })();
 
-// 🔹 User Registration Route
+//s User Registration Route
 app.post("/register", async (req, res) => {
   try {
     const { Username, Password } = req.body;
@@ -56,8 +55,38 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// 🔹 Start Server
+// User Login Route
+app.post("/login", async (req, res) => {
+    try {
+      const { Username, Password } = req.body;
+      if (!Username || !Password) {
+        return res.status(400).json({ error: "Username and Password are required" });
+      }
+  
+      // Retrieve user from DB
+      const [users] = await db.execute("SELECT * FROM Users WHERE LOWER(Username) = LOWER(?)", [Username]);
+      
+      if (users.length === 0) {
+        return res.status(400).json({ message: "User not found" });
+      }
+  
+      const user = users[0];
+  
+      // Compare input password with stored hashed password
+      const passwordMatch = await bcrypt.compare(Password, user.Password);
+      
+      if (!passwordMatch) {
+        return res.status(401).json({ message: "Invalid password" });
+      }
+  
+      res.status(200).json({ message: "Login successful" });
+    } catch (error) {
+      console.error("Error in /login:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
