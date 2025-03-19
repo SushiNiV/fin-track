@@ -1,0 +1,86 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 0; 
+  height: 100%; 
+  width: 50px;
+  background: rgba(0, 0, 0, 0.05); 
+  color: white;
+  border: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out, background 0.3s ease-in-out;
+}
+
+.banner:hover .slide-arrow {
+  opacity: 1; 
+}
+
+.slide-arrow:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.slide-arrow.left {
+  left: 0;
+}
+
+.slide-arrow.right {
+  right: 0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: black;
+}
