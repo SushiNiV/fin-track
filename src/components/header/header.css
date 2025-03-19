@@ -106,14 +106,12 @@
   z-index: 100;
 }
 
-/* Default caret */
 .caret {
   display: inline-block;
   margin-left: 5px;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Rotated caret */
 .caret.rotate {
   transform: rotate(180deg);
 }
