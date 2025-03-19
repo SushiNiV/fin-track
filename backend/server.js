@@ -23,21 +23,40 @@ db.connect((err) => {
   console.log("Connected to MySQL");
 });
 
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
-  db.query(
-    "SELECT * FROM users WHERE username = ? AND password = ?",
-    [username, password],
-    (err, results) => {
-      if (err) return res.status(500).send(err);
-      if (results.length > 0) {
-        res.json({ success: true, message: "Login successful" });
-      } else {
-        res.status(401).json({ success: false, message: "Invalid credentials" });
+// User Registration Route
+app.post("/register", async (req, res) => {
+    const { username, email, password } = req.body;
+  
+    // Check if user already exists
+    db.query(
+      "SELECT * FROM Users WHERE email = ?",
+      [email],
+      async (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+  
+        if (results.length > 0) {
+          return res.status(400).json({ message: "User already exists" });
+        }
+  
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+  
+        // Insert new user
+        db.query(
+          "INSERT INTO Users (username, email, password) VALUES (?, ?, ?)",
+          [username, email, hashedPassword],
+          (err, result) => {
+            if (err) return res.status(500).json({ error: err.message });
+  
+            res.status(201).json({ message: "User registered successfully" });
+          }
+        );
       }
-    }
-  );
-});
-
-app.listen(5000, () => console.log("Server running on port 5000"));
+    );
+  });
+  
+  // Start the server
+  const PORT = 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });  
