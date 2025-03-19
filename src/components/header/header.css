@@ -99,6 +99,17 @@
   font-weight: bold;
 }
 
+.getStart button {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
 .nav-item {
   position: relative;
 }

@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { useAuth } from '../../context/auth/auth'; // Import Auth Context
 import './login.css';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth(); // Use login function from context
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,7 +21,10 @@ export default function Login() {
       });
 
       alert(response.data.message);
-      localStorage.setItem("isLoggedIn", "true");
+
+      // Store user data in Auth Context
+      login({ username });
+
       navigate("/");
     } catch (error) {
       setError(error.response?.data?.message || "Login failed.");

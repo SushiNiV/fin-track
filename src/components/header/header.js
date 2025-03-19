@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth/auth"; // ✅ Correct import
 import "./header.css";
 import SecondNav from "../header/secondNav/secondNav";
 import logo from "../../assets/BLOGO.png";
@@ -7,6 +8,7 @@ import wm from "../../assets/WMlogo.png";
 
 const NavBar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { isLoggedIn, logout } = useAuth(); // ✅ Use `useAuth()` properly
 
   const handleMouseEnter = (menu) => {
     setActiveDropdown(menu);
@@ -68,7 +70,11 @@ const NavBar = () => {
       </ul>
 
       <div className="getStart">
-        <Link to="/login">LOG IN</Link>
+        {isLoggedIn ? (
+          <button onClick={logout}>LOG OUT</button>
+        ) : (
+          <Link to="/login">LOG IN</Link>
+        )}
       </div>
     </nav>
   );
