@@ -48,7 +48,7 @@ export default function Login() {
           />
           <input type="submit" value="Log In" />
           <div className="links">
-              <a onClick={() => navigate("/register")}>Create an account</a>
+          <button onClick={() => navigate("/register")} className="link-button">Create an account</button>
           </div>
         </form>
     </section>

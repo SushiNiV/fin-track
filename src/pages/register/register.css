@@ -97,3 +97,16 @@ body {
   text-decoration: underline;
   color: #143c72;
 }
+
+.link-button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.link-button:hover {
+  color: darkblue;
+}
