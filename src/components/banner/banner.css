@@ -76,11 +76,11 @@
   width: 10px;
   height: 10px;
   margin: 0 5px;
-  background: gray;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .dot.active {
-  background: black;
+  background: rgba(0, 0, 0, 0.75);
 }
