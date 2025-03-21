@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './banner.css';
 
 export default function Banner() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(1);
 
   const slides = [
-    'linear-gradient(to right, #06327d 40%, #209d5c)', 
-    '#209d5c', 
-    '#06327d'
+    'linear-gradient(45deg, rgb(19, 119, 126), #06327d) 40%',
+    'linear-gradient(45deg, #06327d, #209d5c)',
+    'linear-gradient(45deg, #209d5c 40%,rgb(19, 119, 126))'
   ];
 
   function handleSlideChange(direction) {
@@ -30,7 +31,17 @@ export default function Banner() {
             key={index}
             className={`slide ${index === activeSlide ? 'active' : ''}`}
             style={{ background: gradient }}
-          ></li>
+          >
+            {index === 1 && (
+              <div class="s1-content">
+              <div class="s1-text">
+                <h1 class="s1-title">Savings for your own Sake!</h1>
+                <p class="s1-subtitle">Track your expenses, budget smarter, and reach your financial goals.</p>
+                <Link to="/login" className="s1-btn">Get Started</Link>
+              </div>
+            </div>
+            )}
+          </li>
         ))}
       </ul>
 
