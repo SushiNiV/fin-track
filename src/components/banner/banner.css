@@ -85,9 +85,7 @@
   cursor: pointer;
 }
 
-.dot.active {
-  background: rgba(0, 0, 0, 0.75);
-}
+
 
 .s1-text {
   display: flex;
