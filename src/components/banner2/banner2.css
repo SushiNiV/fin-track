@@ -1,0 +1,86 @@
+.banner2 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .slides-container2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slide2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, background 1s ease-in-out;
+  }
+  
+  .slide2.active2 {
+    opacity: 1; 
+  }  
+  
+  .slide-arrow2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.1); 
+  color: white;
+  border: none;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, background 0.3s ease-in-out;
+}
+
+.banner2:hover .slide-arrow2 {
+  opacity: 1;
+}
+
+.slide-arrow2:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.slide-arrow2.left2 {
+  left: 0;
+}
+
+.slide-arrow2.right2 {
+  right: 0;
+}
+
+.pagination-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+  
+.dot2 {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+  
+.dot2.active2 {
+  background: rgba(0, 0, 0, 0.75);
+}  

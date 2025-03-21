@@ -3,12 +3,13 @@
 //import SalaryCalculator from '../../components/salaryCalculator/SalaryCalculator';
 import React from 'react';
 import Banner from '../../components/banner/banner';
-import Hero from '../../components/hero/hero';
+import Banner2 from '../../components/banner2/banner2';//import Hero from '../../components/hero/hero';
 
 const Home = () => {
   return (
     <div>
       <Banner/>
+      <Banner2/>
     </div>
   );
 };

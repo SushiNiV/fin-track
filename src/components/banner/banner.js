@@ -7,9 +7,7 @@ export default function Banner() {
   const slides = [
     'linear-gradient(to right, #06327d 40%, #209d5c)', 
     '#209d5c', 
-    '#06327d',
-    'linear-gradient(45deg, #33cc33, #0099ff)', 
-    'linear-gradient(45deg, #0099ff, #6a0dad)'  
+    '#06327d'
   ];
 
   function handleSlideChange(direction) {
