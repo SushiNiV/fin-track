@@ -1,21 +1,12 @@
-/* General styling */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f4f6f9;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
-
 .regBox {
   background: linear-gradient(to right, #06327d 40%, #209d5c);
   width: 100vw; 
   height: 100vh; 
   display: flex; 
   justify-content: center; 
-  align-items: center; 
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
 
 .register {
