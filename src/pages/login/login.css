@@ -9,11 +9,11 @@ body {
 
 .loginBox {
   background: linear-gradient(to right, #06327d 40%, #209d5c);
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height to cover the viewport */
-  display: flex; /* Use flexbox to center the login box */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  width: 100vw;
+  height: 100vh; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
 }
 
 .login {
@@ -39,7 +39,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Input fields */
 .login input[type="text"],
 .login input[type="password"] {
   color: #012461;
@@ -53,7 +52,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Focus effect */
 .login input[type="text"]:focus,
 .login input[type="password"]:focus {
   border-color: #1e3a8a;

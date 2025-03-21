@@ -4,12 +4,17 @@ import './banner2.css';
 export default function Banner2() {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const slides = ['#00FF00', '#FFFFFF', '#FF0000'];
+  const slides = [
+    'linear-gradient(to bottom, #FFFFFF 10%, #bbe0ff 30%)',
+    '#b5ffcc',
+    '#bbe0ff',
+    '#b5ffcc'
+];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
