@@ -44,13 +44,12 @@ export default function Banner() {
             )}
             {index === 2 && (
               <div class="s2-content">
-                <div class="s2-gif">
+                <div class="s2-gifbox">
                   <img src={S2Gif} alt="Savings GIF" className="s2-gif" />
                 </div>
-                <div class="s1-text">
-                  <h1 class="s1-title">Savings for your own Sake!</h1>
-                  <p class="s1-subtitle">Track your expenses, budget smarter, and reach your financial goals.</p>
-                  <Link to="/login" className="s1-btn">Get Started</Link>
+                <div class="s2-text">
+                  <h1 class="s2-title">Track your expenses</h1>
+                  <p class="s2-subtitle">Log your expenses and see where your money is going.</p>
                 </div>
             </div>
             )}
