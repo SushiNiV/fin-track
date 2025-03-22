@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import S2Gif from "../../assets/fin-gif.gif";
 import './banner.css';
 
 export default function Banner() {
@@ -44,6 +45,7 @@ export default function Banner() {
             {index === 2 && (
               <div class="s2-content">
                 <div class="s2-gif">
+                  <img src={S2Gif} alt="Savings GIF" className="s2-gif" />
                 </div>
                 <div class="s1-text">
                   <h1 class="s1-title">Savings for your own Sake!</h1>
