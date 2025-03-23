@@ -96,17 +96,19 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  margin-top: -80px;
+  margin-top: -100px;
 }
 
 .s1-title {
-  font-size: 3.5rem;
+  font-family: 'Ribeye', serif;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: -10px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 .s1-subtitle {
+  font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 30px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
@@ -116,6 +118,7 @@
   display: inline-block;
   padding: 12px 25px;
   font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
   color: #06327D;
   background-color: #FFD034;
   border-radius: 25px;
@@ -168,25 +171,28 @@
 }
 
 .s2-title {
-  font-size: 3rem;
+  font-family: 'Ribeye', serif;
+  font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: -5px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 .s2-subtitle {
+  font-family: 'Nunito', sans-serif;
   font-size: 1.2rem;
   max-width: 600px;
   margin-bottom: 5px;
   font-style: italic;
-  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25)
 }
 
 .s2-desc {
+  font-family: 'Nunito', sans-serif;
   text-align: left;
   font-size: 1rem;
   line-height: 2;
-  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
 }
 
 .bullet::before {
@@ -217,6 +223,7 @@
 }
 
 .s0-title {
+  font-family: 'Nunito', sans-serif;
   font-size: 3rem;
   font-weight: bold;
   font-style: italic;
