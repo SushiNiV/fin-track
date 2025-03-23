@@ -5,10 +5,10 @@ export default function Banner2() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const slides = [
-    'linear-gradient(to bottom, #f4f6f9 2%, #bbe0ff 50%, #f4f6f9 98%)',
-    'linear-gradient(to bottom, #f4f6f9 2%, #b5ffcc 50%, #f4f6f9 98%)',
-    'linear-gradient(to bottom, #f4f6f9 2%, #bbe0ff 50%, #f4f6f9 98%)',
-    'linear-gradient(to bottom, #f4f6f9 2%, #b5ffcc 50%, #f4f6f9 98%)'
+    'linear-gradient(to bottom, #f4f6f9 2%, #bbe0ff 35%, #f4f6f9 90%)',
+    'linear-gradient(to bottom, #f4f6f9 2%, #b5ffcc 35%, #f4f6f9 90%)',
+    'linear-gradient(to bottom, #f4f6f9 2%, #bbe0ff 35%, #f4f6f9 90%)',
+    'linear-gradient(to bottom, #f4f6f9 2%, #b5ffcc 35%, #f4f6f9 90%)'
 ];
 
   useEffect(() => {
