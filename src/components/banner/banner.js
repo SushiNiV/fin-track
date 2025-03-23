@@ -33,6 +33,16 @@ export default function Banner() {
             className={`slide ${index === activeSlide ? 'active' : ''}`}
             style={{ background: gradient }}
           >
+            {index === 0 && (
+              <div class="s0-content">
+                <div class="s0-text">
+                  <h1 class="s0-title">Track your expenses</h1>
+                </div>
+                <div class="s0-peps">
+                  <img src={S2Gif} alt="Savings GIF" className="s2-gif" />
+                </div>
+            </div>
+            )}
             {index === 1 && (
               <div class="s1-content">
               <div class="s1-text">
