@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import S2Gif from "../../assets/fin-gif.gif";
+import peps from "../../assets/peps.png";
 import './banner.css';
 
 export default function Banner() {
@@ -36,10 +37,10 @@ export default function Banner() {
             {index === 0 && (
               <div class="s0-content">
                 <div class="s0-text">
-                  <h1 class="s0-title">Track your expenses</h1>
+                  <h1 class="s0-title">Understand your<br></br>spending patterns<br></br>and improve your<br></br>financial health.</h1>
                 </div>
                 <div class="s0-peps">
-                  <img src={S2Gif} alt="Savings GIF" className="s2-gif" />
+                  <img src={peps} alt="People" className="peps"/>
                 </div>
             </div>
             )}

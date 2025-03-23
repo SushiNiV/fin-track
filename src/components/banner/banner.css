@@ -5,7 +5,7 @@
   display: flex;  
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
 }
 
@@ -193,4 +193,41 @@
   content: "●"; 
   color: white; 
   margin-right: 8px; 
+}
+
+.s0-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.s0-peps, .s0-text {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.s0-text {
+  align-items: center;
+}
+
+.s0-peps {
+  align-items: flex-end;
+}
+
+.s0-title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  text-shadow: 3px 3px 5px #00000040;
+  text-align: center;
+  margin-left: 65px;
+  margin-bottom: 100px;
+}
+
+.peps {
+  width: 45rem;
+  margin-right: 45px;
 }
