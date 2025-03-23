@@ -38,7 +38,32 @@ export default function Banner2() {
             key={index}
             className={`slide2 ${index === activeSlide ? 'active2' : ''}`}
             style={{ background: color }}
-          ></li>
+          >
+            {index === 0 && (
+              <div class="s02-content">
+                  <h1 class="s02-title">The 50/30/20 Rule</h1>
+                  <p class="s02-subtitle">Instantly track your daily, weekly, and monthly expenses without the hassle of spreadsheets.</p>
+            </div>
+            )}
+            {index === 1 && (
+              <div class="s12-content">
+                  <h1 class="s12-title">Avoid Impulse Buying</h1>
+                  <p class="s12-subtitle">Pause before you purchase! Ask yourself: Do I really need this?</p>
+            </div>
+            )}
+            {index === 2 && (
+              <div class="s02-content">
+                  <h1 class="s02-title">Track Small Expenses</h1>
+                  <p class="s02-subtitle">Little things add up! Coffee, snacks, and subscriptions—monitor them.</p>
+            </div>
+            )}
+            {index === 3 && (
+              <div class="s12-content">
+                  <h1 class="s12-title">Automate Your Savings</h1>
+                  <p class="s12-subtitle">Set up automatic savings deposits and grow your wealth effortlessly.</p>
+            </div>
+            )}
+          </li>
         ))}
       </ul>
 

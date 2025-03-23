@@ -84,3 +84,59 @@
 .dot2.active2 {
   background: rgba(0, 0, 0, 0.75);
 }  
+
+.s02-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+.s02-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: -20px;
+  text-align: center;
+  color: #06327d;
+}
+
+.s02-subtitle {
+  font-size: 1.5rem;
+  color:  #000000;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 90%;
+  margin-bottom: 55px;
+}
+
+.s12-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+.s12-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: -20px;
+  text-align: center;
+  color: #209d5c;
+}
+
+.s12-subtitle {
+  font-size: 1.5rem;
+  color:  #000000;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 90%;
+  margin-bottom: 55px;
+}
