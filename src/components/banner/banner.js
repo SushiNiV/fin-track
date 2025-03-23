@@ -49,7 +49,12 @@ export default function Banner() {
                 </div>
                 <div class="s2-text">
                   <h1 class="s2-title">Track your expenses</h1>
-                  <p class="s2-subtitle">Log your expenses and see where your money is going.</p>
+                  <p class="s2-subtitle"> Instantly track your daily, weekly, and monthly expenses<br></br>without the hassle of spreadsheets.</p>
+                  <p class="s2-desc">
+                    <span class="bullet">Real-time spending updates</span><br></br>
+                    <span class="bullet">Easy-to-read summaries</span><br></br>
+                    <span class="bullet">Smart budget alerts</span>
+                  </p>
                 </div>
             </div>
             )}
