@@ -10,10 +10,11 @@ body {
 .loginBox {
   background: linear-gradient(to right, #06327d 40%, #209d5c);
   width: 100vw;
-  height: 100vh; 
+  height: calc(100vh - 70px); 
   display: flex; 
   justify-content: center;
   align-items: center; 
+  margin-top: 70px;
 }
 
 .login {
