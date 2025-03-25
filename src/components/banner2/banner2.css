@@ -3,6 +3,7 @@
   width: 100%;
   height: 35vh;
   overflow: hidden;
+  user-select: none;
 }
   
 .slides-container2 {
@@ -79,6 +80,7 @@
   background: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   cursor: pointer;
+  user-select: none;
 }
   
 .dot2.active2 {
